@@ -6,11 +6,11 @@
 # ============================================================
 
 # === CONFIGURABLE VARIABLES (edit these) ===
-PROJECT_ID="your-project-id"
+PROJECT_ID="project3grupo1"
 REGION="us-central1"
 REPO_NAME="vertex-repo"
-GITHUB_OWNER="your-github-username"
-GITHUB_REPO="your-repo-name"
+GITHUB_OWNER="nbenlloch-maker"
+GITHUB_REPO="mlops-course-code-students2"
 
 # ============================================================
 # Step 1: Enable required GCP APIs
@@ -58,6 +58,7 @@ for ROLE in "${ROLES[@]}"; do
     gcloud projects add-iam-policy-binding "$PROJECT_ID" \
         --member="serviceAccount:${CB_SA_EMAIL}" \
         --role="$ROLE" \
+        --condition=None \
         --quiet
 done
 
